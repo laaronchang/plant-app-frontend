@@ -4,9 +4,6 @@ import { useState, useEffect } from "react";
 
 
 export function Content() {
-  // const plants = [
-  //   {id: 1, name: "Plant Name", species: "https://via.placehlder.com/150", image: 150, sun_amount: 150, days_water: 3, description: "the description"},
-  // ];
   const [plants, setPlants] = useState([]);
 
   const handlePlantsIndex = () => {
