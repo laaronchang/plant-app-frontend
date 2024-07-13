@@ -18,7 +18,7 @@ export function Content() {
 
   return (
     <main>
-      <h1>Welcome to Plants!</h1>
+      <h1>Welcome to Plants! Content.jsx</h1>
       <PlantsIndex plants={plants}/>
     </main>
   )
