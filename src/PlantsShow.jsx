@@ -27,6 +27,7 @@ export function PlantsShow(props) {
         <div>
           Description: <input name="description" type="text" />
         </div>
+        <button type="submit">Update Plant</button>
       </form>
     </div>
   );
