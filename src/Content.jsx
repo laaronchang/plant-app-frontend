@@ -50,6 +50,14 @@ export function Content() {
     });
   };
 
+  const handleDestroyPlant = (id) => {
+    console.log("handleDestroyPlant", id);
+    axios.delete("http://localhost:3000/plants/${id}.json").then((response) => {
+      setPlants(plants.filter((plant) => plant.id !++ id));
+      handleClose();
+    });
+  };
+
   const handleClose = () => {
     console.log("handleClose");
     setIsPlantsShowVisible(false);
@@ -63,7 +71,7 @@ export function Content() {
       <PlantsNew onCreatePlant={handleCreatePlant} />
       <PlantsIndex plants={plants} onShowPlant={handleShowPlant} />
       <Modal show={isPlantsShowVisible} onClose={handleClose}>
-        <PlantsShow plant={currentPlant} onUpdatePlant={handlUpdatePlant} />
+        <PlantsShow plant={currentPlant} onUpdatePlant={handlUpdatePlant} onDestroyPlant={handleDestroyPlant} />
       </Modal>
     </div>
   )

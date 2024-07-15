@@ -6,6 +6,10 @@ export function PlantsShow(props) {
     props.onUpdatePlant(props.plant.id, params, () => event.target.reset());
   };
 
+  const handleClick = () => {
+    props.onDestroyPlant(props.plant.id);
+  };
+
   return (
     <div>
       <h1>Plant information</h1>
@@ -36,6 +40,7 @@ export function PlantsShow(props) {
         </div>
         <button type="submit">Update Plant</button>
       </form>
+      <button onClick={handleClick}>Delete Plant</button>
     </div>
   );
 }
