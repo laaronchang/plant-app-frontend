@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { PlantsIndex } from "./PlantsIndex";
 import { PlantsNew } from "./PlantsNew";
+import { PlantsShow } from "./PlantsShow";
 import { Modal } from "./Modal";
 
 
@@ -45,7 +46,7 @@ export function Content() {
       <PlantsNew onCreatePlant={handleCreatePlant} />
       <PlantsIndex plants={plants} onShowPlant={handleShowPlant} />
       <Modal show={isPlantsShowVisible} onClose={handleClose}>
-        <h1>Test</h1>
+        <PlantsShow plant={currentPlant} />
       </Modal>
     </main>
   )
