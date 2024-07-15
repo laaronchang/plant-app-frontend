@@ -29,25 +29,25 @@ export function Content() {
 
   const handleShowPlant = (plant) => {
     console.log("handleShowPlant", plant);
-    setIsPlantsShowVisible(false);
+    setIsPlantsShowVisible(true);
     setCurrentPlant(plant);
   };
 
   const handleClose = () => {
     console.log("handleClose");
-    setIsPlantsShowVisible(true);
+    setIsPlantsShowVisible(false);
   };
 
   useEffect(handlePlantsIndex, []);
 
   return (
-    <main>
+    <div>
       <h1>Welcome to Plants! Content.jsx</h1>
       <PlantsNew onCreatePlant={handleCreatePlant} />
       <PlantsIndex plants={plants} onShowPlant={handleShowPlant} />
       <Modal show={isPlantsShowVisible} onClose={handleClose}>
         <PlantsShow plant={currentPlant} />
       </Modal>
-    </main>
+    </div>
   )
 }
