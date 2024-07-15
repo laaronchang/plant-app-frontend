@@ -8,7 +8,7 @@ export function PlantsShow(props) {
       <p>Sun: {props.plant.sun_amount}</p>
       <p>Water Per Week: {props.plant.days_water}</p>
       <p>Description: {props.plant.description}</p>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           Name: <input defaultValue={props.plant.name} name="name" type="text" />
         </div>
