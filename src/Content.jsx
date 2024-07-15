@@ -53,7 +53,7 @@ export function Content() {
   const handleDestroyPlant = (id) => {
     console.log("handleDestroyPlant", id);
     axios.delete("http://localhost:3000/plants/${id}.json").then((response) => {
-      setPlants(plants.filter((plant) => plant.id !++ id));
+      setPlants(plants.filter((plant) => plant.id !== id));
       handleClose();
     });
   };
