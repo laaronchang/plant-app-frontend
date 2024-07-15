@@ -38,7 +38,7 @@ export function Content() {
     setIsPlantsShowVisible(false);
   };
 
-  const handlUpdatePlant = (id, params, successCallback) => {
+  const handleUpdatePlant = (id, params, successCallback) => {
     console.log("handleUpdatePlant", params);
     axios.patch("http://localhost:3000/plants/${id}.json", params).then((response) => {
       setPlants(
@@ -77,7 +77,7 @@ export function Content() {
   // )
 
   return (
-    <div className="container">
+    <div>
       <Routes>
         {/* <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
