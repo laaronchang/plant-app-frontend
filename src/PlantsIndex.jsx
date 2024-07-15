@@ -7,7 +7,8 @@ export function PlantsIndex(props) {
         <h2>{plant.name}</h2>
         <p>Species: {plant.species}</p>
         {/* <p>image: {plant.plant_image}</p> */}
-        <img src="https://plants.sc.egov.usda.gov/ImageLibrary/standard/alstr_001_svp.jpg"></img>
+        {/* <img src="https://plants.sc.egov.usda.gov/ImageLibrary/standard/alstr_001_svp.jpg"></img> */}
+        <img src ={plant.plant_image} />
         <p>Sun: {plant.sun_amount}</p>
         <p>Water Per Week: {plant.days_water}</p>
         <p>Description: {plant.description}</p>
