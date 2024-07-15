@@ -28,13 +28,13 @@ export function Content() {
 
   const handleShowPlant = (plant) => {
     console.log("handleShowPlant", plant);
-    setIsPlantsShowVisible(true);
+    setIsPlantsShowVisible(false);
     setCurrentPlant(plant);
   };
 
   const handleClose = () => {
     console.log("handleClose");
-    setIsPlantsShowVisible(false);
+    setIsPlantsShowVisible(true);
   };
 
   useEffect(handlePlantsIndex, []);
