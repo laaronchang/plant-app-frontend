@@ -1,4 +1,11 @@
 export function PlantsShow(props) {
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const params = new FOrmData(event.target);
+    props.onUpdatePlant(props.plant.id, params, () => event.target.reset());
+  };
+
   return (
     <div>
       <h1>Plant information</h1>
