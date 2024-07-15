@@ -2,10 +2,13 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { PlantsIndex } from "./PlantsIndex";
 import { PlantsNew } from "./PlantsNew";
+import { Modal } from "./Modal";
 
 
 export function Content() {
   const [plants, setPlants] = useState([]);
+  const [isPlantsShowVisible, setIsPlantsShowVisible] = useState(false);
+  const [currentPlant, setCurrentPlant] = useState({});
 
   const handlePlantsIndex = () => {
     console.log("handlePlantsIndex");
@@ -23,13 +26,27 @@ export function Content() {
     });
   };
 
+  const handleShowPlant = (plant) => {
+    console.log("handleShowPlant", plant);
+    setIsPlantsShowVisible(true);
+    setCurrentPlant(plant);
+  };
+
+  const handleClose = () => {
+    console.log("handleClose");
+    setIsPlantsShowVisible(false);
+  };
+
   useEffect(handlePlantsIndex, []);
 
   return (
     <main>
       <h1>Welcome to Plants! Content.jsx</h1>
       <PlantsNew onCreatePlant={handleCreatePlant} />
-      <PlantsIndex plants={plants}/>
+      <PlantsIndex plants={plants} onShowPlant={handleShowPlant} />
+      <Modal show={isPlantsShowVisible} onClose={handleClose}>
+        <h1>Test</h1>
+      </Modal>
     </main>
   )
 }
