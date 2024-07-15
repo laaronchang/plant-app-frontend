@@ -71,22 +71,24 @@ export function Content() {
   //     <PlantsNew onCreatePlant={handleCreatePlant} />
   //     <PlantsIndex plants={plants} onShowPlant={handleShowPlant} />
   //     <Modal show={isPlantsShowVisible} onClose={handleClose}>
-  //       <PlantsShow plant={currentPlant} onUpdatePlant={handlUpdatePlant} onDestroyPlant={handleDestroyPlant} />
+  //       <PlantsShow plant={currentPlant} onUpdatePlant={handleUpdatePlant} onDestroyPlant={handleDestroyPlant} />
   //     </Modal>
   //   </div>
   // )
 
   return (
-    <div>
+    <div className="container">
       <Routes>
         {/* <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<LogoutLink />} /> */}
+        <Route path="/" element={<PlantsIndex plants={plants} onShowPlants={handleShowPlant} />} />
         <Route path="/plants/new" element={<PlantsNew />} />
         <Route path="/plants" element={<PlantsIndex plants={plants} onShowPlant={handleShowPlant} />} />
       </Routes>
 
       <Modal show={isPlantsShowVisible} onClose={handleClose}>
+        {/* <PlantsShow plant={currentPlant} onClose={handleClose} /> */}
         <h2>{currentPlant.name}</h2>
         <p>Species: {currentPlant.species}</p>
         <img src ={currentPlant.plant_image} />

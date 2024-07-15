@@ -2,7 +2,7 @@ export function PlantsShow(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const params = new FOrmData(event.target);
+    const params = new FormData(event.target);
     props.onUpdatePlant(props.plant.id, params, () => event.target.reset());
   };
 
@@ -24,19 +24,19 @@ export function PlantsShow(props) {
           Name: <input defaultValue={props.plant.name} name="name" type="text" />
         </div>
         <div>
-          Species: <input name="species" type="text" />
+          Species: <input defaultValue={props.plant.species} name="species" type="text" />
         </div>
         <div>
-          Image Url: <input name="plant_image" type="text" />
+          Image Url: <input defaultValue={props.plant.plant_image} name="plant_image" type="text" />
         </div>
         <div>
-          Amount of Sun: <input name="sun_amount" type="text" />
+          Amount of Sun: <input defaultValue={props.plant.sun_amount} name="sun_amount" type="text" />
         </div>
         <div>
-          Days to Water: <input name="days_water" type="integer" />
+          Days to Water: <input defaultValue={props.plant.days_water} name="days_water" type="integer" />
         </div>
         <div>
-          Description: <input name="description" type="text" />
+          Description: <input defaultValue={props.plant.description} name="description" type="text" />
         </div>
         <button type="submit">Update Plant</button>
       </form>
