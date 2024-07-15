@@ -33,6 +33,11 @@ export function Content() {
     setCurrentPlant(plant);
   };
 
+  const handleClose = () => {
+    console.log("handleClose");
+    setIsPlantsShowVisible(false);
+  };
+
   const handlUpdatePlant = (id, params, successCallback) => {
     console.log("handleUpdatePlant", params);
     axios.patch("http://localhost:3000/plants/${id}.json", params).then((response) => {
@@ -58,11 +63,6 @@ export function Content() {
     });
   };
 
-  const handleClose = () => {
-    console.log("handleClose");
-    setIsPlantsShowVisible(false);
-  };
-
   useEffect(handlePlantsIndex, []);
 
   // return (
@@ -82,7 +82,7 @@ export function Content() {
         {/* <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<LogoutLink />} /> */}
-        <Route path="/" element={<PlantsIndex plants={plants} onShowPlants={handleShowPlant} />} />
+        <Route path="/" element={<PlantsIndex plants={plants} onShowPlant={handleShowPlant} />} />
         <Route path="/plants/new" element={<PlantsNew />} />
         <Route path="/plants" element={<PlantsIndex plants={plants} onShowPlant={handleShowPlant} />} />
       </Routes>
