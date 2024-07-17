@@ -1,9 +1,12 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
 import { PlantsIndex } from "./PlantsIndex";
 import { PlantsNew } from "./PlantsNew";
 import { PlantsShow } from "./PlantsShow";
 import { Modal } from "./Modal";
+import { Signup } from "./Signup";
+import { Login } from "./Login";
+import { LogoutLink } from "./LogoutLink";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import { Routes, Route } from "react-router-dom";
 
 export function Content() {
@@ -41,8 +44,7 @@ export function Content() {
   const handleUpdatePlant = (id, params, successCallback) => {
     console.log("handleUpdatePlant", params);
     axios.patch("http://localhost:3000/plants/${id}.json", params).then((response) => {
-      setPlants(
-        plants.map((plant) => {
+      setPlants(plants.map((plant) => {
           if (plant.id === response.data.id) {
             return response.data;
           } else {
@@ -79,22 +81,23 @@ export function Content() {
   return (
     <div>
       <Routes>
-        {/* <Route path="/signup" element={<Signup />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/logout" element={<LogoutLink />} /> */}
+        <Route path="/logout" element={<LogoutLink />} />
         <Route path="/" element={<PlantsIndex plants={plants} onShowPlant={handleShowPlant} />} />
         <Route path="/plants/new" element={<PlantsNew />} />
-        <Route path="/plants" element={<PlantsIndex plants={plants} onShowPlant={handleShowPlant} />} />
+        {/* <Route path="/plants" element={<PlantsIndex plants={plants} onShowPlant={handleShowPlant} />} /> */}
       </Routes>
 
       <Modal show={isPlantsShowVisible} onClose={handleClose}>
-        {/* <PlantsShow plant={currentPlant} onClose={handleClose} /> */}
+        {/* <PlantsShow plant={currentPlant} onClose={handleClose} />
         <h2>{currentPlant.name}</h2>
         <p>Species: {currentPlant.species}</p>
         <img src ={currentPlant.plant_image} />
         <p>Sun: {currentPlant.sun_amount}</p>
         <p>Water Per Week: {currentPlant.days_water}</p>
-        <p>Description: {currentPlant.description}</p>
+        <p>Description: {currentPlant.description}</p> */}
+        <PlantsShow plant={currentPlant} onUpdatePlant={handleUpdatePlant} />
       </Modal>
     </div>
   );

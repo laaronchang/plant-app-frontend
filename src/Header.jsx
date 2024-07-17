@@ -5,10 +5,10 @@ export function Header() {
 return (
   <header>
     <nav>
-      <a href="#">Home</a> | <a href="#">Link</a>
+      <a href="/">Home</a> | <a href="/login">Login</a> | <Link to="/signup">Signup</Link> | <Link to="/logout">Logout</Link>
     </nav>
   </header>
 )
 }
-<Link to="/signup">Signup</Link>
+
 
