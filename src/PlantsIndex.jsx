@@ -1,6 +1,9 @@
 export function PlantsIndex(props) {
   return (
     <div>
+      <br />
+      <br />
+      <br />
       <h1>All Plants</h1>
       {props.plants.map((plant) => (
         <div key={plant.id}>
