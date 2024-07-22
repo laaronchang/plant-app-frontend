@@ -15,7 +15,8 @@ export function PlantsIndex(props) {
           <p>Water Per Week: {plant.days_water}</p>
           <p>Description: {plant.description}</p> */}
           <br />
-          <button onClick={() => props.onShowPlant(plant)}>More Info</button>
+          
+          <button className="btn" onClick={() => props.onShowPlant(plant)}>More Info</button>
         </div>
       ))}
       </div>
