@@ -31,11 +31,12 @@ export function Login() {
   return (
     <div id="login">
       <h1>Login</h1>
-      <ul>
+      {/* Below was creating the navbar color to appear */}
+      {/* <ul>
         {errors.map((error) => (
           <li key={error}>{error}</li>
         ))}
-      </ul>
+      </ul> */}
       <form onSubmit={handleSubmit}>
         <div>
           Email: <input name="email" type="email" />

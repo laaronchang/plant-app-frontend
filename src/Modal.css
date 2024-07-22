@@ -1,3 +1,4 @@
+/* This is when opening the modal how the main page will appear in the background */
 .modal-background {
   display: block;
   position: fixed;
@@ -9,13 +10,15 @@
   z-index: 1000;
 }
 
-.modal-main {
+/* Original modal mains */
+/* .modal-main {
   position: fixed;
   background: white;
-  width: 80%;
-  height: auto;
+  width: 60%;
+  height: 70%;
   top: 50%;
   left: 50%;
+  overflow: scroll;
   transform: translate(-50%, -50%);
   padding: 1em;
 }
@@ -27,4 +30,41 @@
   position: absolute;
   top: 0em;
   right: 0.2em;
+} */
+
+.modal-main {
+  position: fixed;
+  background: rgb(255, 255, 255);
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px !important;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px !important;
+  width: 60%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  /* overflow: scroll; */
+  transform: translate(-50%, -50%);
+  padding: 1em;
+}
+
+.modal-main button.close {
+  font-size: 2em;
+  background: none;
+  border: none;
+  position: absolute;
+  top: 0em;
+  right: 0.2em;
+}
+
+/* New cards function */
+.card__button {
+  text-decoration: none;
+  font-size: var(--small-font-size);
+  font-weight: 500;
+  color: var(--first-color);
+}
+
+.card__button:hover {
+  text-decoration: underline;
 }

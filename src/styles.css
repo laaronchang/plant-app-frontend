@@ -1,18 +1,8 @@
-html {
-  scroll-behavior: smooth;
-}
-
-main {
-  max-width: 50em;
-  margin: 0 auto;
-}
-
-
 /* Variables for CSS */
 :root {
   --first-color: green;
   --title-color: black;
-  /* --text-color: grey; */
+  --text-color: grey;
   --body-color: white;
   --container-color: white;
 
@@ -40,41 +30,23 @@ body {
   color: var(--text-color);
 }
 
-img:not(.header-image) {
+img {
   display: block;
-  border-radius: 1rem;
-  max-width: 80%;
+  max-width: 100%;
   height: auto;
-}
-
-/* NEW TEST CONTAINER */
-
-.containers {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 50px;
-}
-
-.container img {
-  /* width: 80%; */
-  height: auto;
-  object-fit: cover;
 }
 
 
 /* CARD */
-/* .container {
+.container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   place-items: center;
   margin-inline: 1.5rem;
   padding-block: 5rem;
-} */
+}
 
 .card__container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 50px;
   row-gap: 3.5rem;
 }
 
@@ -82,10 +54,10 @@ img:not(.header-image) {
   position: relative;
 }
 
-/* .card__img {
+.card__img {
   width: 328px;
   border-radius: 1.5rem;
-} */
+}
 
 .card__data {
   width: 280px;
@@ -115,9 +87,7 @@ img:not(.header-image) {
   margin-bottom: .75rem;
 }
 
-/* Below already hidden */
-
-/* .card__button {
+.card__button {
   text-decoration: none;
   font-size: var(--small-font-size);
   font-weight: 500;
@@ -126,4 +96,4 @@ img:not(.header-image) {
 
 .card__button:hover {
   text-decoration: underline;
-} */
+}

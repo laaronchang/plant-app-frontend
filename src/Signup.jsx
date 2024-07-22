@@ -24,11 +24,12 @@ export function Signup() {
   return (
     <div id="signup">
       <h1>Signup</h1>
-      <ul>
+      {/* Below was making the navbar color appear */}
+      {/* <ul>
         {errors.map((error) => (
           <li key={error}>{error}</li>
         ))}
-      </ul>
+      </ul> */}
       <form onSubmit={handleSubmit}>
         <div>
           Name: <input name="name" type="text" />

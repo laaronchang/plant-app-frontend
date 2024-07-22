@@ -79,7 +79,7 @@ export function Content() {
   // )
 
   return (
-    <div>
+    <main>
       <Routes>
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
@@ -99,6 +99,6 @@ export function Content() {
         <p>Description: {currentPlant.description}</p> */}
         <PlantsShow plant={currentPlant} onUpdatePlant={handleUpdatePlant} />
       </Modal>
-    </div>
+    </main>
   );
 }

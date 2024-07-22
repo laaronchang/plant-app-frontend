@@ -15,10 +15,14 @@ export function PlantsShow(props) {
       <h1>Plant information</h1>
       <p>Name: {props.plant.name}</p>
       <p>Species: {props.plant.species}</p>
+      <br />
       <img src ={props.plant.plant_image} />
       <p>Amount of Sun: {props.plant.sun_amount}</p>
       <p>Days A Week To Water: {props.plant.days_water}</p>
+      <br />
       <p>Description: {props.plant.description}</p>
+      <br />
+      <br />
       <form onSubmit={handleSubmit}>
         <div>
           Name: <input defaultValue={props.plant.name} name="name" type="text" />
